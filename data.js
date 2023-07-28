@@ -11,4 +11,8 @@ const inventory = [
     { "id": 10, "description": "Surfboard repair kit", "price": 19.99, type: "gear" }
 ]
 
-module.exports = {inventory}
+const getInventory = () => {
+    return inventory
+}
+
+module.exports = {getInventory}

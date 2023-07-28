@@ -1,12 +1,13 @@
-const { inventory } = require("./data.js")
+const { getInventory } = require("./data.js")
 const {
     isBargain, isClothing, isGear,
     isSurfboard, convertDataForAccounting,
     calculateAveragePrice
 } = require("./functions.js")
 
+const sequinasInventory = getInventory()
 
-for (let surfProduct of inventory) {
+for (let surfProduct of sequinasInventory) {
     let message = ""
 
     if (isClothing(surfProduct)) {
@@ -34,7 +35,7 @@ for (let surfProduct of inventory) {
 console.log("\n------------------------\n")
 
 
-for (const product of inventory) {
+for (const product of sequinasInventory) {
     const modifiedData = convertDataForAccounting(product)
     console.log(modifiedData)
 }
